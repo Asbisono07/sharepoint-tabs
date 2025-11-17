@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos por Pestañas</title>
+    <style>
+        .tabs-container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tabs-header {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #0078d4;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .tab-button {
+            padding: 15px 25px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .tab-button:hover {
+            background-color: #e1f5fe;
+            color: #0078d4;
+        }
+        .tab-button.active {
+            background-color: white;
+            color: #0078d4;
+            border-bottom: 3px solid #0078d4;
+        }
+        .tab-content {
+            display: none;
+            padding: 30px;
+            background: white;
+            border: 1px solid #e1e1e1;
+            border-top: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .documento {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #0078d4;
+        }
+        .documento h3 {
+            color: #004494;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs-container">
+        <div class="tabs-header">
+            <button class="tab-button active" onclick="openTab('tab1')">Políticas</button>
+            <button class="tab-button" onclick="openTab('tab2')">Procedimientos</button>
+            <button class="tab-button" onclick="openTab('tab3')">Formatos</button>
+        </div>
+        
+        <div id="tab1" class="tab-content active">
+            <h2>Políticas Corporativas</h2>
+            <div class="documento">
+                <h3>Política Uso de Teléfonos Celulares</h3>
+                <p><strong>Ashley Lopez</strong> | Agosto 20, 2025</p>
+                <p>Doc. #: PS-PO-DTI-001 | Versión: 01</p>
+                <!-- TU CONTENIDO AQUÍ -->
+            </div>
+        </div>
+        
+        <div id="tab2" class="tab-content">
+            <h2>Procedimientos</h2>
+            <div class="documento">
+                <h3>Procedimiento de Solicitudes</h3>
+                <p>Contenido de procedimientos...</p>
+                <!-- TU CONTENIDO AQUÍ -->
+            </div>
+        </div>
+        
+        <div id="tab3" class="tab-content">
+            <h2>Formatos</h2>
+            <p>Contenido de formatos...</p>
+            <!-- TU CONTENIDO AQUÍ -->
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabId) {
+            var tabContents = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            var tabButtons = document.getElementsByClassName('tab-button');
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
